@@ -1,6 +1,6 @@
 *** Settings ***
 Documentation        Suite de testes de cadastro de dog walker
-Library              Browser
+Resource             ../resources/base.resource
 
 
 *** Test Cases ***
@@ -11,7 +11,7 @@ Deve validar a tela de cadasro de um novo Dog walker
     ${email}                 Set Variable        jonteste@teste.com  
     ${cpf}                   Set Variable        77002758152
     ${cep}                   Set Variable        72914502
-    ${addressStreet}         Set Variable        Quadra 4 Conjunto A
+    ${addressStreet}         Set Variable        
     ${addressNumber}         Set Variable        14
     ${addressDetails}        Set Variable        apto 204
     ${addressDistrict}       Set Variable        Parque da Barragem Setor 06
@@ -23,9 +23,7 @@ Deve validar a tela de cadasro de um novo Dog walker
     Submit signup form
     Popup should be     Recebemos o seu cadastro e em breve retornaremos o contato.
 
-
 *** Keywords ***
-
 Go to signup page
     New Browser        browser=chromium        headless=False
     #Acessando o site
@@ -67,3 +65,4 @@ Popup should be
 
     #Pausa para visualizar as informções
     Sleep    5
+
